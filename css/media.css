@@ -1,0 +1,45 @@
+@media (max-width: 800px) {
+  /* mobile nav */
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 46px;
+    background-color: #e8d6cb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+
+    transition: all 0.5s ease-in;
+
+    width: 100%;
+    height: 80vh;
+
+    transform: translateX(100%);
+
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .navigation-link {
+    font-size: 2.6rem;
+  }
+
+  .nav-open .navigation {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav.fa-xmark {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav.fa-bars {
+    display: none;
+  }
+}
