@@ -23,12 +23,17 @@
       <div class="header-container">
         <a href="index.html" class="logo">Mommy Moods</a>
         <div class="navigation-container margin-bottom">
+          <button class="btn-mobile-nav">
+            <i class="fa-sharp fa-solid fa-bars icon-mobile-nav"></i>
+            <i class="fa-sharp fa-solid fa-xmark icon-mobile-nav"></i>
+          </button>
           <nav class="navigation">
-            <a href="index.html" class="navigation-link">Home</a>
+            <a href="index.html" class="navigation-link ">Home</a>
             <a href="blog.html" class="navigation-link active">Blog</a>
             <a href="about.html" class="navigation-link">About</a>
             <a href="contact.html" class="navigation-link">Contact</a>
           </nav>
+
           <div class="search-container">
             <label for="search"
               ><input type="text" name="search" placeholder="Search for posts..." id="search"
@@ -41,10 +46,10 @@
     <main>
       <section class="section section-category">
         <h1 class="heading-primary">This is a Heading 1</h1>
-        <button class="category category--selicted ">category</button>
-        <button class="category">category</button>
-        <button class="category">category</button>
-        <button class="category">category</button>
+        <button class="btn-category btn-category--selicted ">category</button>
+        <button class="btn-category">category</button>
+        <button class="btn-category">category</button>
+        <button class="btn-category">category</button>
       </section>
 
       <section class="section section-blog">
@@ -65,7 +70,7 @@
       </section>
 
       <section class="section section-blogposts blogposts-container margin-bottom">
-        <div class="grid-3cols">
+        <div class="grid-auto">
           <a href="blogSpecific.html" class="blog-post">
             <img class="blog-img" src="/images/frends.jpg"></img>
             <div>
@@ -212,5 +217,6 @@
       </div>
       <blockquote class="coryright">Copyright &copy;2022 MommyMoods</blockquote>
     </footer>
+    <script src="js/navigation.js"></script>
   </body>
 </html>
