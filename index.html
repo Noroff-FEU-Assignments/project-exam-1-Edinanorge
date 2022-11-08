@@ -17,6 +17,22 @@
       rel="stylesheet"
     />
     <script src="https://kit.fontawesome.com/16bf78a0e8.js" crossorigin="anonymous"></script>
+    <!-- Hotjar Tracking Code for blog -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3235661, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
   <body>
     <header>
@@ -131,6 +147,7 @@
       </section>
 
       <section class="section section-carousel margin-bottom">
+        <h2 class="heading-secondary">Latest posts</h2>
         <div class="carousel-item">
           <a href="blogSpecific.html" class="grid">
             <img src="./images/eating.jpg" alt="" />
@@ -170,6 +187,8 @@
             </blockquote>
           </a>
         </div>
+        <button class="btn-arrow btn-left"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="btn-arrow btn-right btn--selected"><i class="fa-solid fa-chevron-right"></i></button>
       </section>
 
       <section class="section section-cta">
@@ -202,7 +221,7 @@
       </div>
       <blockquote class="coryright">Copyright &copy;2022 MommyMoods</blockquote>
     </footer>
-    <script src="js/carousel.js"></script>
-    <script src="js/navigation.js"></script>
+    <script src="js/components/carousel.js"></script>
+    <script src="js/components/navigation.js"></script>
   </body>
 </html>
