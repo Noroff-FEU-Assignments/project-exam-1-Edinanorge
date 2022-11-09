@@ -463,11 +463,7 @@ label[for="subject"] {
 .section-blogpost h1 {
   grid-column: 1/-1;
 }
-.blogpost-img {
-  background-image: url(/images/baby2.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+
 .section-blogpost form {
   max-width: 100%;
   margin: 0;
