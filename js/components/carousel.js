@@ -1,28 +1,32 @@
-const carousels = document.querySelectorAll(".section-carousel");
+const btnLeft = document.querySelector(".btn-left");
+const btnRight = document.querySelector(".btn-right");
+const carousel = document.querySelector(".carousel");
+const carouselItem = document.querySelectorAll(".carousel-item");
 
-carousels.forEach((carousel) => {
-  const carouselItems = carousel.querySelectorAll(".carousel-item");
-  const dotsHtml = Array.from(carouselItems, () => {
-    return `<button class="dot">&nbsp;</button>`;
-  });
+let i = 0;
+let width = carouselItem[i].clientWidth;
+console.log(width);
 
-  carousel.insertAdjacentHTML("beforeend", `<div class="dots">${dotsHtml.join("")}</div>`);
+btnRight.addEventListener("click", () => {
+  i++;
+  carousel.style.transform = `translate(${-i * (width + 80)}px)`;
 
-  const dots = carousel.querySelectorAll(".dot");
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      carouselItems.forEach((carouselItem) => {
-        carouselItem.classList.remove("carousel-item--selected");
-      });
-      dots.forEach((dot) => {
-        dot.classList.remove("dot--selected");
-      });
-      carouselItems[i].classList.add("carousel-item--selected");
-      dot.classList.add("dot--selected");
-    });
-  });
-
-  carouselItems[0].classList.add("carousel-item--selected");
-  dots[0].classList.add("dot--selected");
+  if (i === carouselItem.length - 1) {
+    btnRight.classList.add("disable");
+  } else {
+    btnLeft.classList.remove("disable");
+  }
 });
+
+btnLeft.addEventListener("click", () => {
+  i--;
+  carousel.style.transform = `translate(${-i * (width + 80)}px)`;
+
+  if (i === 0) {
+    btnLeft.classList.add("disable");
+  } else {
+    btnRight.classList.remove("disable");
+  }
+});
+
+btnLeft.classList.add("disable");

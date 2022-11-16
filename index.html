@@ -17,17 +17,22 @@
       rel="stylesheet"
     />
     <script src="https://kit.fontawesome.com/16bf78a0e8.js" crossorigin="anonymous"></script>
-<!-- Hotjar Tracking Code for blog -->
-<script>
-  (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:3239617,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+    <!-- Hotjar Tracking Code for blog -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3239617, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
   <body>
     <header>
@@ -73,53 +78,8 @@
       </section>
 
       <section class="section section-posts grid margin-bottom">
-        <a href="blogSpecific.html" class="grid blog-post">
-          <img src="./images/baby2.jpg" alt="" />
-          <div>
-            <h2 class="heading-secondary">This is a heading2</h2>
-            <div class="category">
-              <span>Category</span>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, asperiores nesciunt fugit eaque
-              commodi autem nostrum a exercitationem. [...]
-            </p>
-            <span class="date">03 October 2023</span>
-          </div>
-        </a>
-
-        <a href="blogSpecific.html" class="grid blog-post">
-          <img src="./images/joy.jpg" alt="" />
-          <div>
-            <h2 class="heading-secondary">This is a heading2</h2>
-            <div class="category">
-              <span>Category</span>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, asperiores nesciunt fugit eaque
-              exercitationem. [...]
-            </p>
-            <span class="date">03 October 2023</span>
-          </div>
-        </a>
-
-        <a href="blogSpecific.html" class="grid blog-post">
-          <img src="./images/frends.jpg" alt="" />
-          <div>
-            <h2 class="heading-secondary">This is a heading2</h2>
-            <div class="category">
-              <span>Category</span>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, asperiores nesciunt fugit eaque
-              quidem facere a exercitationem. [...]
-            </p>
-            <span class="date">03 October 2023</span>
-          </div>
-        </a>
-
         <div class="about-me">
-          <img src="./images/profil.jpg" alt="" />
+          <img src="./images/profil.jpg" alt="" loading="lazy" />
           <div>
             <h3 class="heading-tertiary">Hello my name is Jane.</h3>
             <p>
@@ -143,40 +103,15 @@
 
       <section class="section section-carousel margin-bottom">
         <h2 class="heading-secondary">Latest posts</h2>
-        <div class="carousel-item">
-          <a href="blogSpecific.html" class="grid">
+
+        <div class="carousel">
+          <a href="blogSpecific.html" class="grid carousel-item">
             <img src="./images/eating.jpg" alt="" />
             <blockquote class="carousel-text">
               <h3 class="heading-tertiary">This is a heading 3</h3>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia nesciunt aliquid ex atque quibusdam.
-                [...]
-              </p>
-              <p class="date">1 November 2022</p>
-            </blockquote>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="blogSpecific.html" class="grid">
-            <img src="./images/play.jpg" alt="" />
-            <blockquote class="carousel-text">
-              <h3 class="heading-tertiary">This is a heading 3</h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia nesciunt aliquid ex atque quibusdam.
-                [...]
-              </p>
-              <p class="date">1 November 2022</p>
-            </blockquote>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="blogSpecific.html" class="grid">
-            <img src="./images/eating.jpg" alt="" />
-            <blockquote class="carousel-text">
-              <h3 class="heading-tertiary">This is a heading 3</h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia nesciunt aliquid ex atque quibusdam.
-                [...]
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum dolore rerum ea dignissimos, voluptatum
+                laudantium. [...].
               </p>
               <p class="date">1 November 2022</p>
             </blockquote>
@@ -216,7 +151,9 @@
       </div>
       <blockquote class="coryright">Copyright &copy;2022 MommyMoods</blockquote>
     </footer>
-    <script src="js/components/carousel.js"></script>
+
     <script src="js/components/navigation.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/components/carousel.js"></script>
   </body>
 </html>
