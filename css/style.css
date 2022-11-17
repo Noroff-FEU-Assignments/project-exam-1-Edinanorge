@@ -247,7 +247,7 @@ a {
 .blog-post i,
 .carousel-item i,
 .post-text i {
-  margin-right: 0.5rem;
+  margin-right: 0.7rem;
 }
 
 .blog-post span,
@@ -255,7 +255,7 @@ a {
 .post-text span {
   font-size: 1.4rem;
   color: #662624;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
 }
 
 .social-media i {
@@ -383,6 +383,20 @@ a {
 
   background-color: #f3eed9;
 }
+.form-error {
+  color: red;
+  font-size: 1.6rem;
+  grid-column: 1/-1;
+  text-align: start;
+  opacity: 0;
+}
+
+.form-success,
+.form-success-comment,
+.form-success-contact {
+  display: none;
+  color: green;
+}
 
 .form input {
   width: 100%;
@@ -403,9 +417,9 @@ label[for="subject"] {
   grid-column: 1/-1;
 }
 
-#btn-submit {
+#btnSubmit {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 4;
   background-color: #662624;
   color: #fff;
   font-weight: 500;
@@ -415,7 +429,7 @@ label[for="subject"] {
   transition: all 0.3s ease;
 }
 
-#btn-submit:hover {
+#btnSubmit:hover {
   background-color: #521e1d;
 }
 /* footer */
@@ -479,11 +493,11 @@ label[for="subject"] {
   background-size: cover;
   background-position-y: center;
   background-position-x: center;
-  height: 60rem;
+  height: 100%;
 }
 
-.section-contact #btn-submit {
-  grid-row: 4;
+.section-contact #btnSubmit {
+  grid-row: 8;
 }
 
 #message {
@@ -499,12 +513,12 @@ label[for="subject"] {
   row-gap: 4rem;
 }
 
-.section-blog .grid {
-  align-items: center;
-}
-
 .section-blog {
   position: relative;
+}
+
+.section-blog .grid {
+  align-items: center;
 }
 
 .section-blog .btn-cta {

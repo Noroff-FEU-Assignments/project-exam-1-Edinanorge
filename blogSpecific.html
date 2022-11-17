@@ -8,6 +8,7 @@
     <title>Mommy Moods | Blog specific page</title>
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/media.css" rel="stylesheet" />
+    <link rel="icon" href="images/siteicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,30 +62,46 @@
     </header>
     <main>
       <section class="section section-blogpost grid">
-        <form class="form">
-          <h3 class="heading-tertiary">This is a heading 3</h3>
-          <p>This is a small paragraf. body text</p>
+        <form action="" class="form" id="ctaForm">
+          <h3 class="heading-tertiary">Subscribe to Newsletter</h3>
+          <p>To be uppdated whit all the latest posts.</p>
+          <span class="form-success">
+            <i class="fa-solid fa-thumbs-up"></i>Thank you for subscribing to MammyMoods.com!
+          </span>
           <div class="form-input-container">
+            <span class="form-error" id="emailError">* Please enter a valid email address.</span>
+            <span class="form-error" id="fullNameError">* Please enter your full name.</span>
             <label for="email"> <input type="text" id="email" name="email" placeholder="Email:" /></label>
-            <label for="name"> <input type="text" id="name" name="name" placeholder="Name:" /></label>
 
-            <input type="submit" value="Subscribe" id="btn-submit" />
+            <label for="name"> <input type="text" id="name" name="name" placeholder="Name:" /></label>
+            <input type="submit" value="Subscribe" id="btnSubmit" />
           </div>
         </form>
       </section>
 
       <section class="section section-comment margin-bottom">
         <div class="form-container">
-          <form class="form">
+          <form class="form" id="commentForm">
             <h3 class="heading-tertiary">Leave a comment</h3>
-
-            <label for="message"> <input type="text" id="message" name="message" placeholder="Message:" /></label>
+            <span class="form-success-comment">
+              <i class="fa-solid fa-thumbs-up"></i>Thank you for sharing your thoughts whit us.
+            </span>
+            <label for="message"
+              ><span class="form-error" id="messageError">*Your message must be at least 25 characters</span>
+              <input type="text" id="message" name="message" placeholder="Message:"
+            /></label>
             <div class="form-text">
-              <label for="name"> <input type="text" id="name" name="name" placeholder="Name:" /></label>
-              <label for="email"> <input type="text" id="email" name="email" placeholder="Email:" /></label>
+              <label for="name"
+                ><span class="form-error" id="fullNameErrorComment">* Please enter your full name.</span>
+                <input type="text" id="nameComment" name="name" placeholder="Name:"
+              /></label>
+              <label for="email"
+                ><span class="form-error" id="emailErrorComment">* Please enter a valid email address.</span>
+                <input type="text" id="emailComment" name="email" placeholder="Email:"
+              /></label>
             </div>
 
-            <input type="submit" value="Submit" id="btn-submit" />
+            <input type="submit" value="Submit" id="btnSubmit" />
           </form>
         </div>
       </section>
@@ -106,6 +123,6 @@
       <blockquote class="coryright">Copyright &copy;2022 MommyMoods</blockquote>
     </footer>
     <script src="js/components/navigation.js"></script>
-    <script src="js/blogSpecific.js"></script>
+    <script src="js/blogSpecific.js" type="module"></script>
   </body>
 </html>

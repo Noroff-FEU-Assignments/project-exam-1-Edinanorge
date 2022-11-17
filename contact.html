@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Welcomme on my blog. This is a blog about mom life and parenting." />
-    <title>Mommy Moods | Blog page</title>
+    <title>Mommy Moods | Contact page</title>
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/media.css" rel="stylesheet" />
+    <link rel="icon" href="images/siteicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,16 +64,23 @@
       <section class="section section-contact grid margin-bottom">
         <h1 class="heading-primary">Contact Me</h1>
         <div class="contact-img"></div>
-        <form class="form">
-          <h3 class="heading-tertiary">This is a heading 3</h3>
-          <p>This is a small paragraf. body text</p>
+        <form class="form" id="contactForm">
+          <h2 class="heading-secondary">Say hi to me.</h2>
+          <p>Feel free to contact me and I will get back to you as soon as possible.</p>
+          <span class="form-success-contact">
+            <i class="fa-solid fa-thumbs-up"></i>Thank you for sharing your thoughts whit us.
+          </span>
           <div class="form-input-container">
+            <span class="form-error" id="messageError">*Your message must be at least 25 characters</span>
             <label for="message"> <input type="text" id="message" name="message" placeholder="Message:" /></label>
+            <span class="form-error" id="subjectContact">* Please enter a valid email address.</span>
             <label for="subject"> <input type="text" id="subject" name="subject" placeholder="Subject:" /></label>
+            <span class="form-error" id="emailErrorContact">* Please enter a valid email address.</span>
             <label for="email"> <input type="text" id="email" name="email" placeholder="Email:" /></label>
+            <span class="form-error" id="fullNameErrorContact">* Please enter your full name.</span>
             <label for="name"> <input type="text" id="name" name="name" placeholder="Name:" /></label>
 
-            <input type="submit" value="Submit" id="btn-submit" />
+            <input type="submit" value="Submit" id="btnSubmit" />
           </div>
           <div class="social-media">
             <i class="fa-brands fa-facebook-f"></i>
@@ -101,4 +109,5 @@
     </footer>
   </body>
   <script src="js/components/navigation.js"></script>
+  <script src="js/contact.js" type="module"></script>
 </html>

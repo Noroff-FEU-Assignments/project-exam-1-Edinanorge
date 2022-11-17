@@ -1,9 +1,8 @@
-const url = `https://edinaisztojka.store/blog/wp-json/wp/v2/posts`;
-const newUrl = url + `?per_page=13`;
+import { url, urlBasic, restPostsUrl } from "./config/apiUrl.js";
 
 const postsContainer = document.querySelector(".grid-auto");
-const btnOlderPosts = document.querySelector(".section-blog .btn-cta");
 const btnCategories = document.querySelectorAll(".btn-category");
+const btnOlderPosts = document.querySelector(".section-blog .btn-cta");
 
 async function getPosts(url) {
   try {
@@ -11,16 +10,17 @@ async function getPosts(url) {
     const posts = await response.json();
     if (!response.ok) throw new Error(`${posts.status} `);
     // display sticky posts
+
     postsContainer.insertAdjacentHTML("afterbegin", displayPosts(posts));
   } catch (error) {
     console.log(error);
   }
 }
-getPosts(url);
+getPosts(urlBasic);
 
 btnOlderPosts.addEventListener("click", (e) => {
-  const restPostsUrl = url + `?page=2`;
   getPosts(restPostsUrl);
+
   btnOlderPosts.classList.add("btn-disable");
 });
 
@@ -30,9 +30,9 @@ btnCategories.forEach(function (category) {
     const categoryChosen = e.target.value;
 
     if (categoryChosen === 7) {
-      getPosts(url);
+      getPosts(urlBasic);
     } else {
-      const categoryUrl = newUrl + `&categories=${categoryChosen}`;
+      const categoryUrl = url + `&categories=${categoryChosen}`;
       postsContainer.innerHTML = "";
       getPosts(categoryUrl);
     }
@@ -51,12 +51,14 @@ function displayPosts(posts) {
               <img src="${post.better_featured_image.source_url}" alt="${
       post.better_featured_image.alt_text
     }"  loading="lazy"/>
-              <div>
+              <div class="blog-post-text">
                 <h2 class="heading-secondary">${post.title.rendered}</h2>
                 <p>${post.excerpt.rendered}</p>
-                <span class="date"><i class="fa-solid fa-calendar-days"></i> ${post.date.slice(0, -9)}</span>
-                <span><i class="fa-solid fa-comment"></i>${post.id} commment</span>
-                <span><i class="fa-solid fa-share"></i>Share</span>
+                <div>
+                  <span class="date"><i class="fa-solid fa-calendar-days"></i> ${post.date.slice(0, -9)}</span>
+                  <span><i class="fa-solid fa-comment"></i>${post.id} commment</span>
+                  <span><i class="fa-solid fa-share"></i>Share</span>
+                </div>
               </div>
             </a>`;
   });
