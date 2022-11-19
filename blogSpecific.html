@@ -83,22 +83,16 @@
         <div class="form-container">
           <form class="form" id="commentForm">
             <h3 class="heading-tertiary">Leave a comment</h3>
-            <span class="form-success-comment">
-              <i class="fa-solid fa-thumbs-up"></i>Thank you for sharing your thoughts whit us.
-            </span>
-            <label for="message"
-              ><span class="form-error" id="messageError">*Your message must be at least 25 characters</span>
-              <input type="text" id="message" name="message" placeholder="Message:"
-            /></label>
+            <span class="form-success-comment"
+              ><i class="fa-solid fa-thumbs-up"></i>Thank you for sharing your thoughts whit us.</span
+            >
+            <div class="form-error" id="messageError">*Your message must be at least 25 characters</div>
+            <div class="form-error" id="fullNameErrorComment">* Please enter your full name.</div>
+            <div class="form-error" id="emailErrorComment">* Please enter a valid email address.</div>
+            <label for="message"><input type="text" id="message" name="message" placeholder="Message:" /></label>
             <div class="form-text">
-              <label for="name"
-                ><span class="form-error" id="fullNameErrorComment">* Please enter your full name.</span>
-                <input type="text" id="nameComment" name="name" placeholder="Name:"
-              /></label>
-              <label for="email"
-                ><span class="form-error" id="emailErrorComment">* Please enter a valid email address.</span>
-                <input type="text" id="emailComment" name="email" placeholder="Email:"
-              /></label>
+              <label for="name"> <input type="text" id="nameComment" name="name" placeholder="Name:" /></label>
+              <label for="email"> <input type="text" id="emailComment" name="email" placeholder="Email:" /></label>
             </div>
 
             <input type="submit" value="Submit" id="btnSubmit" />

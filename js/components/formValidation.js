@@ -14,6 +14,13 @@ const formSuccessComment = document.querySelector(".form-success-comment");
 const message = document.querySelector("#message");
 const messageError = document.querySelector("#messageError");
 
+const fullNameContact = document.querySelector("#nameContact");
+const fullNameErrorContact = document.querySelector("#fullNameErrorContact");
+const emailContact = document.querySelector("#emailContact");
+const emailErrorContact = document.querySelector("#emailErrorContact");
+const formSuccessContact = document.querySelector(".form-success-contact");
+const subjectContact = document.querySelector("#subjectContact");
+
 export function validateCtaForm(event) {
   event.preventDefault();
 

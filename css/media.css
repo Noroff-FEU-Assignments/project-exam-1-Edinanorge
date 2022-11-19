@@ -34,7 +34,9 @@
   .btn-arrow {
     display: none;
   }
-
+  .carousel {
+    transform: none;
+  }
   .carousel,
   .carousel-item {
     display: block;
@@ -181,8 +183,9 @@
     justify-content: space-between;
   }
 
-  .section-cta .form {
+  .form {
     max-width: 100%;
+    padding: 2rem;
   }
 
   /* blogpost-specific page */
@@ -199,6 +202,6 @@
     display: block;
   }
   html {
-    font-size: 58%;
+    font-size: 56%;
   }
 }
