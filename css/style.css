@@ -171,7 +171,8 @@ a {
 }
 
 .icon-mobile-nav {
-  font-size: 2.4rem;
+  padding-left: 0.5rem;
+  font-size: 2.8rem;
   color: #662624;
 }
 
@@ -179,6 +180,19 @@ a {
   display: none;
 }
 
+/* sticky nav */
+.sticky .navigation-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  background-color: #e8d6cbf5;
+  transform: translateY(0 2%);
+}
+
+.sticky .section-hero {
+  margin-top: 4.5rem;
+}
 /* hero section */
 
 .hero-img {
