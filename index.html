@@ -78,7 +78,7 @@
         </div>
       </section>
 
-      <section class="section section-posts grid margin-bottom">
+      <section class="section section-posts grid">
         <div class="about-me">
           <img src="./images/profil.jpg" alt="" loading="lazy" />
           <div>
@@ -105,21 +105,13 @@
       <section class="section section-carousel margin-bottom">
         <h2 class="heading-secondary">Latest posts</h2>
 
-        <div class="carousel">
-          <a href="blogSpecific.html" class="grid carousel-item">
-            <img src="./images/eating.jpg" alt="" />
-            <blockquote class="carousel-text">
-              <h3 class="heading-tertiary">This is a heading 3</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum dolore rerum ea dignissimos, voluptatum
-                laudantium. [...].
-              </p>
-              <p class="date">1 November 2022</p>
-            </blockquote>
-          </a>
-        </div>
-        <button class="btn-arrow btn-left"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="btn-arrow btn-right btn--selected"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="carousel"></div>
+        <button class="btn-arrow btn-left" arial-label="move to left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="btn-arrow btn-right btn--selected" arial-label="move to right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </section>
 
       <section class="section section-cta">
@@ -130,8 +122,8 @@
             ><i class="fa-solid fa-thumbs-up"></i>Thank you subscribing to MammyMoods.com!</span
           >
           <div class="form-input-container">
-            <span class="form-error" id="emailError">* Please enter a valid email address.</span>
-            <span class="form-error" id="fullNameError">* Please enter your full name.</span>
+            <div class="form-error" id="emailError">* Please enter a valid email address.</div>
+            <div class="form-error" id="fullNameError">* Please enter your full name.</div>
             <label for="email"> <input type="text" id="email" name="email" placeholder="Email:" /></label>
 
             <label for="name"> <input type="text" id="name" name="name" placeholder="Name:" /></label>

@@ -1,3 +1,4 @@
+import { renderSpinner } from "./components/spinner.js";
 import { url, urlBasic, restPostsUrl } from "./config/apiUrl.js";
 
 const postsContainer = document.querySelector(".grid-auto");
@@ -9,8 +10,8 @@ async function getPosts(url) {
     const response = await fetch(url);
     const posts = await response.json();
     if (!response.ok) throw new Error(`${posts.status} `);
-    // display sticky posts
 
+    // display sticky posts
     postsContainer.insertAdjacentHTML("afterbegin", displayPosts(posts));
   } catch (error) {
     console.log(error);
@@ -18,7 +19,7 @@ async function getPosts(url) {
 }
 getPosts(urlBasic);
 
-btnOlderPosts.addEventListener("click", (e) => {
+btnOlderPosts.addEventListener("click", () => {
   getPosts(restPostsUrl);
 
   btnOlderPosts.classList.add("btn-disable");
@@ -26,6 +27,7 @@ btnOlderPosts.addEventListener("click", (e) => {
 
 btnCategories.forEach(function (category) {
   category.onclick = function (e) {
+    e.preventDefault();
     changeBtnAvtiveStyle(category);
     const categoryChosen = e.target.value;
 

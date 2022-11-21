@@ -14,7 +14,7 @@ async function getPost(url) {
     const posts = await response.json();
     // find post
     const post = posts.find(({ id }) => id == productId);
-    console.log(post);
+
     // dispaly post
     const postContainer = document.querySelector(".section-blogpost ");
     postContainer.insertAdjacentHTML("beforeend", displayPost(post));
@@ -24,6 +24,7 @@ async function getPost(url) {
     const img = document.querySelector(".blog-post-img");
     img.addEventListener("click", handleClick);
   } catch (error) {
+    postContainer.innerHTML = "";
     console.error(error);
   }
 }

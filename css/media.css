@@ -60,6 +60,13 @@
   .section-cta .form {
     max-width: 80%;
   }
+  /* Blogpost specific page */
+  .section-blogpost .form-input-container {
+    display: block;
+  }
+  .section-blogpost .form-input-container input {
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 800px) {
@@ -161,6 +168,15 @@
     float: none;
     padding: 0;
     width: 100%;
+  }
+
+  .form-input-container,
+  .section-comment .form-text {
+    display: block;
+  }
+  .form-input-container input,
+  .section-comment .form-text input {
+    margin-bottom: 1rem;
   }
 }
 

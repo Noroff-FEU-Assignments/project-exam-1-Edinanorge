@@ -20,6 +20,46 @@ const emailContact = document.querySelector("#emailContact");
 const emailErrorContact = document.querySelector("#emailErrorContact");
 const formSuccessContact = document.querySelector(".form-success-contact");
 const subjectContact = document.querySelector("#subjectContact");
+const subjectErrorContact = document.querySelector("#subjectErrorContact");
+const messageContact = document.querySelector("#messageContact");
+const messageErrorContact = document.querySelector("#messageErrorContact");
+
+export function validateContactForm(event) {
+  event.preventDefault();
+  if (checkLength(messageContact.value, 25)) {
+    messageErrorContact.style.opacity = 0;
+  } else {
+    messageErrorContact.style.opacity = 1;
+  }
+
+  if (checkLength(subjectContact.value, 0)) {
+    subjectErrorContact.style.opacity = 0;
+  } else {
+    subjectErrorContact.style.opacity = 1;
+  }
+
+  if (validateEmail(emailContact.value)) {
+    emailErrorContact.style.opacity = 0;
+  } else {
+    emailErrorContact.style.opacity = 1;
+  }
+  if (checkLength(fullNameContact.value, 0) && isNaN(fullNameContact.value)) {
+    fullNameErrorContact.style.opacity = 0;
+  } else {
+    fullNameErrorContact.style.opacity = 1;
+  }
+
+  if (
+    checkLength(messageContact.value, 25) &&
+    checkLength(subjectContact.value, 0) &&
+    validateEmail(emailContact.value) &&
+    checkLength(fullNameContact.value, 0) &&
+    isNaN(fullNameContact.value)
+  ) {
+    contactForm.reset();
+    formSuccessContact.style.display = "block";
+  }
+}
 
 export function validateCtaForm(event) {
   event.preventDefault();
@@ -44,6 +84,7 @@ export function validateCtaForm(event) {
 
 export function validateCommentForm(event) {
   event.preventDefault();
+
   if (checkLength(message.value, 25)) {
     messageError.style.opacity = 0;
   } else {
@@ -68,13 +109,9 @@ export function validateCommentForm(event) {
     isNaN(fullNameComment.value) &&
     validateEmail(emailComment.value)
   ) {
-    formSuccessComment.style.display = "block";
     commentForm.reset();
+    formSuccessComment.style.display = "block";
   }
-}
-
-export function validateContactForm(event) {
-  event.preventDefault();
 }
 
 function checkLength(value, len) {
@@ -84,6 +121,7 @@ function checkLength(value, len) {
     return false;
   }
 }
+
 function validateEmail(email) {
   const regEx = /\S+@\S+\.\S+/;
   const patternMatches = regEx.test(email);
