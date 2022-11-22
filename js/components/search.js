@@ -8,7 +8,7 @@ async function getPosts(url) {
     const response = await fetch(url);
     const posts = await response.json();
     if (!response.ok) throw new Error(`${posts.status} `);
-    console.log(posts);
+
     if (posts.length > 0) {
       searchPostsContainer.innerHTML = displaySearchedPosts(posts);
     } else {

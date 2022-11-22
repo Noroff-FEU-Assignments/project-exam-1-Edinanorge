@@ -1,7 +1,7 @@
 import { renderSpinner } from "./components/spinner.js";
 import { url, urlBasic, restPostsUrl } from "./config/apiUrl.js";
 
-const postsContainer = document.querySelector(".grid-auto");
+const postsContainer = document.querySelector(".blog-container");
 const restPostsContainer = document.querySelector(".rest-posts");
 const btnCategories = document.querySelectorAll(".btn-category");
 const btnOlderPosts = document.querySelector(".section-blog .btn-cta");
