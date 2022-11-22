@@ -63,7 +63,7 @@
     </header>
     <main>
       <section class="section section-blogpost grid">
-        <form action="" class="form" id="ctaForm">
+        <form class="form" id="ctaForm">
           <h3 class="heading-tertiary">Subscribe to Newsletter</h3>
           <p>To be uppdated whit all the latest posts.</p>
           <span class="form-success">
@@ -81,6 +81,7 @@
       </section>
 
       <section class="section section-comment margin-bottom">
+        <div class="comment-container"></div>
         <div class="form-container">
           <form class="form" id="commentForm">
             <h3 class="heading-tertiary">Leave a comment</h3>
@@ -92,11 +93,13 @@
             <div class="form-error" id="emailErrorComment">* Please enter a valid email address.</div>
             <label for="message"><input type="text" id="message" name="message" placeholder="Message:" /></label>
             <div class="form-text">
-              <label for="name"> <input type="text" id="nameComment" name="name" placeholder="Name:" /></label>
-              <label for="email"> <input type="text" id="emailComment" name="email" placeholder="Email:" /></label>
+              <label for="nameComment"> <input type="text" id="nameComment" name="name" placeholder="Name:" /></label>
+              <label for="emailComment">
+                <input type="text" id="emailComment" name="email" placeholder="Email:"
+              /></label>
             </div>
 
-            <input type="submit" value="Submit" id="btnSubmit" />
+            <input type="submit" value="Submit" id="btnSubmitComment" />
           </form>
         </div>
       </section>

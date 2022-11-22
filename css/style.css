@@ -454,9 +454,9 @@ a {
   gap: 1rem;
 }
 
-label[for="email"],
-label[for="message"],
-label[for="subject"] {
+label[for="emailContact"],
+label[for="messageContact"],
+label[for="subjectContact"] {
   grid-column: 1/-1;
 }
 

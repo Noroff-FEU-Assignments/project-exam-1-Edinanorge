@@ -23,7 +23,7 @@ const subjectContact = document.querySelector("#subjectContact");
 const subjectErrorContact = document.querySelector("#subjectErrorContact");
 const messageContact = document.querySelector("#messageContact");
 const messageErrorContact = document.querySelector("#messageErrorContact");
-
+const commnetContainer = document.querySelector(".comment-container");
 export function validateContactForm(event) {
   event.preventDefault();
   if (checkLength(messageContact.value, 25)) {
