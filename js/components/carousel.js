@@ -6,7 +6,6 @@ function carousel() {
 
   let i = 0;
   let width = carouselItem[i].clientWidth;
-  console.log(width);
 
   btnRight.addEventListener("click", () => {
     i++;
