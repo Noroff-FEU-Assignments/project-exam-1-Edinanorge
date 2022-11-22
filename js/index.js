@@ -1,6 +1,5 @@
 import { validateCtaForm, ctaForm } from "./components/formValidation.js";
 import { stickyUrl, latestUrl } from "./config/apiUrl.js";
-import { renderSpinner } from "./components/spinner.js";
 
 ctaForm.addEventListener("submit", validateCtaForm);
 
@@ -11,7 +10,6 @@ async function getPosts(url) {
     if (!response.ok) throw new Error(`${posts.status} `);
 
     // display sticky posts
-
     const postContainer = document.querySelector(".section-posts");
     postContainer.insertAdjacentHTML("afterbegin", displayStickyPosts(posts));
   } catch (error) {

@@ -2,41 +2,40 @@ import { renderSpinner } from "./components/spinner.js";
 import { url, urlBasic, restPostsUrl } from "./config/apiUrl.js";
 
 const postsContainer = document.querySelector(".grid-auto");
+const restPostsContainer = document.querySelector(".rest-posts");
 const btnCategories = document.querySelectorAll(".btn-category");
 const btnOlderPosts = document.querySelector(".section-blog .btn-cta");
 
-async function getPosts(url) {
+async function getPosts(url, container) {
   try {
     const response = await fetch(url);
     const posts = await response.json();
     if (!response.ok) throw new Error(`${posts.status} `);
-
-    // display sticky posts
-    postsContainer.insertAdjacentHTML("afterbegin", displayPosts(posts));
+    container.innerHTML = renderSpinner();
+    container.innerHTML = displayPosts(posts);
   } catch (error) {
     console.log(error);
   }
 }
-getPosts(urlBasic);
+getPosts(urlBasic, postsContainer);
 
 btnOlderPosts.addEventListener("click", () => {
-  getPosts(restPostsUrl);
-
+  restPostsContainer.innerHTML = renderSpinner();
+  getPosts(restPostsUrl, restPostsContainer);
   btnOlderPosts.classList.add("btn-disable");
 });
 
 btnCategories.forEach(function (category) {
   category.onclick = function (e) {
-    e.preventDefault();
     changeBtnAvtiveStyle(category);
+    restPostsContainer.innerHTML = "";
     const categoryChosen = e.target.value;
 
     if (categoryChosen === 7) {
-      getPosts(urlBasic);
+      getPosts(urlBasic, postsContainer);
     } else {
       const categoryUrl = url + `&categories=${categoryChosen}`;
-      postsContainer.innerHTML = "";
-      getPosts(categoryUrl);
+      getPosts(categoryUrl, postsContainer);
     }
   };
 });
