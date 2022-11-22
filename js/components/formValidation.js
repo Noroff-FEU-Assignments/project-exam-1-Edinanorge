@@ -32,7 +32,7 @@ export function validateContactForm(event) {
     messageErrorContact.style.opacity = 1;
   }
 
-  if (checkLength(subjectContact.value, 0)) {
+  if (checkLength(subjectContact.value, 15)) {
     subjectErrorContact.style.opacity = 0;
   } else {
     subjectErrorContact.style.opacity = 1;
@@ -43,7 +43,7 @@ export function validateContactForm(event) {
   } else {
     emailErrorContact.style.opacity = 1;
   }
-  if (checkLength(fullNameContact.value, 0) && isNaN(fullNameContact.value)) {
+  if (checkLength(fullNameContact.value, 5) && isNaN(fullNameContact.value)) {
     fullNameErrorContact.style.opacity = 0;
   } else {
     fullNameErrorContact.style.opacity = 1;
@@ -51,9 +51,9 @@ export function validateContactForm(event) {
 
   if (
     checkLength(messageContact.value, 25) &&
-    checkLength(subjectContact.value, 0) &&
+    checkLength(subjectContact.value, 15) &&
     validateEmail(emailContact.value) &&
-    checkLength(fullNameContact.value, 0) &&
+    checkLength(fullNameContact.value, 5) &&
     isNaN(fullNameContact.value)
   ) {
     contactForm.reset();
@@ -64,7 +64,7 @@ export function validateContactForm(event) {
 export function validateCtaForm(event) {
   event.preventDefault();
 
-  if (checkLength(fullName.value, 0) && isNaN(fullName.value)) {
+  if (checkLength(fullName.value, 5) && isNaN(fullName.value)) {
     fullNameError.style.opacity = 0;
   } else {
     fullNameError.style.opacity = 1;
@@ -76,7 +76,7 @@ export function validateCtaForm(event) {
     emailError.style.opacity = 1;
   }
 
-  if (checkLength(fullName.value, 0) && isNaN(fullName.value) && validateEmail(email.value)) {
+  if (checkLength(fullName.value, 5) && isNaN(fullName.value) && validateEmail(email.value)) {
     ctaForm.reset();
     formSuccess.style.display = "block";
   }
@@ -91,7 +91,7 @@ export function validateCommentForm(event) {
     messageError.style.opacity = 1;
   }
 
-  if (checkLength(fullNameComment.value, 0) && isNaN(fullNameComment.value)) {
+  if (checkLength(fullNameComment.value, 5) && isNaN(fullNameComment.value)) {
     fullNameErrorComment.style.opacity = 0;
   } else {
     fullNameErrorComment.style.opacity = 1;
@@ -105,7 +105,7 @@ export function validateCommentForm(event) {
 
   if (
     checkLength(message.value, 25) &&
-    checkLength(fullNameComment.value, 0) &&
+    checkLength(fullNameComment.value, 5) &&
     isNaN(fullNameComment.value) &&
     validateEmail(emailComment.value)
   ) {
@@ -115,7 +115,7 @@ export function validateCommentForm(event) {
 }
 
 function checkLength(value, len) {
-  if (value.trim().length > len) {
+  if (value.trim().length >= len) {
     return true;
   } else {
     return false;

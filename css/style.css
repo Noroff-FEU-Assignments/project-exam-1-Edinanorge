@@ -1,3 +1,6 @@
+/*************/
+/*  GENERAL  */
+
 * {
   margin: 0;
   padding: 0;
@@ -105,7 +108,34 @@ a {
   background-color: #24c1ff;
 }
 
+/* spinner */
+.spinner {
+  grid-column: 1/-1;
+  justify-self: center;
+  display: inline-block;
+  animation: rotate 2s infinite linear;
+  border: 5px solid #e8d6cb9f;
+  border-top-color: #662624;
+  border-radius: 50%;
+  height: 8rem;
+  width: 8rem;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*************/
+/* HOME PAGE */
+
+/***************/
 /* header, nav */
+
 .header-container {
   background-image: url(../images/texture1.jpg);
   text-align: center;
@@ -161,6 +191,18 @@ a {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
+.search-results-container {
+  background-color: #f3eed9;
+}
+.search-input-error {
+  grid-column: 1/-1;
+  margin: 2rem;
+  font-size: 2.6rem;
+  color: #030303;
+}
+
+.blog-post-search {
+}
 /* mobile nav */
 .btn-mobile-nav {
   border: none;
@@ -192,6 +234,8 @@ a {
 .sticky .section-hero {
   margin-top: 4rem;
 }
+
+/****************/
 /* hero section */
 
 .hero-img {
@@ -202,6 +246,7 @@ a {
   background-position-x: center;
 }
 
+/****************/
 /* post section */
 
 .section-posts .blog-post img {
@@ -277,6 +322,7 @@ a {
   font-size: 2.4rem;
 }
 
+/**********************************/
 /* section latest posts, carousel */
 
 .section-carousel .heading-tertiary {
@@ -358,6 +404,7 @@ a {
   color: #e8d6cb;
 }
 
+/***************/
 /* cta section */
 .section-cta {
   padding: 14rem 0;
@@ -428,6 +475,7 @@ label[for="subject"] {
   background-color: #521e1d;
 }
 
+/**********/
 /* footer */
 .footer {
   padding-top: 4rem;
@@ -452,8 +500,8 @@ label[for="subject"] {
   padding: 2rem;
 }
 
-/* ******************* */
-/* About page */
+/***************/
+/* ABOUT PAGE */
 .section-about p {
   font-size: 2rem;
 }
@@ -465,8 +513,9 @@ label[for="subject"] {
   grid-row: 1;
 }
 
-/* *********** */
-/* Contact page */
+/****************/
+/* CONTACT PAGE */
+
 .section-contact.grid {
   gap: 0;
 }
@@ -500,8 +549,9 @@ label[for="subject"] {
   padding-bottom: 6rem;
 }
 
-/* ******************* */
-/* blog page */
+/**************/
+/* BLOG PAGE */
+
 .grid-auto {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -535,7 +585,7 @@ label[for="subject"] {
 }
 
 /**********************/
-/* blog specific page */
+/* BLOG SPECIFIC PAGE*/
 
 .section-blogpost form {
   max-width: 100%;
@@ -605,26 +655,4 @@ label[for="subject"] {
   padding: 2rem;
   border-radius: 0.8rem;
   background: white;
-}
-/* spinner */
-.spinner {
-  grid-column: 1/-1;
-  justify-self: center;
-  display: inline-block;
-  animation: rotate 2s infinite linear;
-  border: 5px solid #e8d6cb9f;
-  border-top-color: #662624;
-  border-radius: 50%;
-  height: 8rem;
-  width: 8rem;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
