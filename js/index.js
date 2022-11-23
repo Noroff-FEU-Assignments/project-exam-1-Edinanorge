@@ -14,6 +14,8 @@ async function getPosts(url) {
     postContainer.insertAdjacentHTML("afterbegin", displayStickyPosts(posts));
   } catch (error) {
     console.log(error);
+    postContainer.innerHtml = `<div class="search-input-error">Something went wrong!</div>
+                              <p>${error}</p>`;
   }
 }
 getPosts(stickyUrl);
@@ -29,6 +31,8 @@ async function getLatestPosts(url) {
     latestPostsConatiner.insertAdjacentHTML("afterbegin", displayLatestPosts(posts));
     carousel();
   } catch (error) {
+    latestPostsConatiner.innerHtml = `<div class="search-input-error">Something went wrong!</div>
+                                      <p>${error}</p>`;
     console.log(error);
   }
 }

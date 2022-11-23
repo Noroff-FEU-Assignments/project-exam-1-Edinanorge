@@ -14,6 +14,8 @@ async function getPosts(url, container) {
     container.innerHTML = renderSpinner();
     container.innerHTML = displayPosts(posts);
   } catch (error) {
+    container.innerHTML = `<div class="search-input-error">Something went wrong!</div>
+                            <p>${error}</p>`;
     console.log(error);
   }
 }

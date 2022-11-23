@@ -151,7 +151,7 @@ a {
 
 .navigation-container {
   position: relative;
-  background-color: #e8d6cb;
+  background-color: #e8d6cbbd;
   padding: 1rem;
   display: flex;
   justify-content: space-around;
@@ -191,9 +191,17 @@ a {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
+.btn-search:hover {
+  background-color: #662624;
+  color: #fff;
+  transition: all 0.3 ease;
+}
 .search-results-container {
   background-color: #f3eed9;
+  width: 100%;
+  z-index: 999;
 }
+
 .search-input-error {
   grid-column: 1/-1;
   margin: 2rem;
@@ -234,6 +242,11 @@ a {
 
 .sticky .section-hero {
   margin-top: 4rem;
+}
+
+.sticky .search-results-container {
+  position: fixed;
+  top: 47px;
 }
 
 /****************/
@@ -427,7 +440,7 @@ a {
   background-color: #f3eed9;
 }
 .form-error {
-  color: red;
+  color: #940401;
   font-size: 1.6rem;
   grid-column: 1/-1;
   text-align: start;

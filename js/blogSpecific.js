@@ -24,7 +24,8 @@ async function getPost(url) {
     const img = document.querySelector(".blog-post-img");
     img.addEventListener("click", handleClick);
   } catch (error) {
-    postContainer.innerHTML = "";
+    postContainer.innerHTML =`<div class="search-input-error">Something went wrong!</div>
+                              <p>${error}</p>` ;
     console.error(error);
   }
 }
