@@ -452,15 +452,18 @@ a {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 1rem;
+  text-align: start;
 }
 
+label[for="email"],
 label[for="emailContact"],
 label[for="messageContact"],
 label[for="subjectContact"] {
   grid-column: 1/-1;
 }
 
-#btnSubmit {
+#btnSubmit,
+#btnSubmitComment {
   grid-column: 2;
   grid-row: 4;
   background-color: #662624;
@@ -472,7 +475,8 @@ label[for="subjectContact"] {
   transition: all 0.3s ease;
 }
 
-#btnSubmit:hover {
+#btnSubmit:hover,
+#btnSubmitComment:hover {
   background-color: #521e1d;
 }
 
@@ -544,6 +548,7 @@ label[for="subjectContact"] {
 
 .section-contact #btnSubmit {
   grid-row: 8;
+  align-self: flex-end;
 }
 
 #messageContact {
