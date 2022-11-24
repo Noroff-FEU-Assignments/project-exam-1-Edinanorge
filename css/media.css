@@ -114,11 +114,13 @@
   .nav-open .icon-mobile-nav.fa-bars {
     display: none;
   }
-  .section-hero {
-    display: block;
-  }
 
   /* home page */
+
+  .section-hero img {
+    display: none;
+  }
+
   .about-me {
     display: block;
     text-align: center;
