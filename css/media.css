@@ -138,6 +138,13 @@
     flex-direction: column;
   }
 
+  /* form */
+
+  #btnSubmit:hover,
+  #btnSubmitComment {
+    display: inline-block;
+    margin-top: 2rem;
+  }
   /* contact page */
   .section-contact {
     display: block;

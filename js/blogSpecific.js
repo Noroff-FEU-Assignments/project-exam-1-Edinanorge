@@ -24,8 +24,8 @@ async function getPost(url) {
     const img = document.querySelector(".blog-post-img");
     img.addEventListener("click", handleClick);
   } catch (error) {
-    postContainer.innerHTML =`<div class="search-input-error">Something went wrong!</div>
-                              <p>${error}</p>` ;
+    postContainer.innerHTML = `<div class="search-input-error">Something went wrong!</div>
+                              <p>${error}</p>`;
     console.error(error);
   }
 }
@@ -38,13 +38,14 @@ function handleClick() {
 }
 
 function displayPost(post) {
-  let html = `<img class="blog-post-img" src="${post.better_featured_image.source_url}" alt="${
+  let html = `<img class="blog-post-img" src="${post.better_featured_image.source_url}" 
+              alt="${post.better_featured_image.alt_text}" />
+              <div class="modal-outer">
+                <div class="modal-inner"> 
+                  <img class="modal-img" src="${post.better_featured_image.source_url}" alt="${
     post.better_featured_image.alt_text
   }" />
-              <div class="modal-outer">
-                <div class="modal-inner"> <img class="modal-img" src="${post.better_featured_image.source_url}" alt="${
-    post.better_featured_image.alt_text
-  }" /></div>
+                </div>
               </div>
                <div class="post-text blog-post-text">
                   <h1 class="heading-secondary">${post.title.rendered}</h1>

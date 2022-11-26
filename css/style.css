@@ -438,8 +438,16 @@ a {
   padding: 4rem;
 
   background-color: #f3eed9;
+
+  position: relative;
 }
+
+.form p {
+  margin-bottom: 3rem;
+}
+
 .form-error {
+  line-height: 1.2rem;
   color: #940401;
   font-size: 1.6rem;
   grid-column: 1/-1;
@@ -450,8 +458,27 @@ a {
 .form-success,
 .form-success-comment,
 .form-success-contact {
-  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(51, 51, 51, 0.734);
   color: green;
+
+  padding: 2rem;
+  border-radius: 1rem;
+
+  display: grid;
+  place-items: center;
+  display: none;
+}
+.card {
+  background-color: #fbfbfb;
+  height: 300px;
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
 .form input {
@@ -459,26 +486,20 @@ a {
   border: none;
   background-color: #fff;
   padding: 1.5rem;
+  margin-top: 2rem;
 }
 
 .form-input-container {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 1rem;
   text-align: start;
-}
-
-label[for="email"],
-label[for="emailContact"],
-label[for="messageContact"],
-label[for="subjectContact"] {
-  grid-column: 1/-1;
+  gap: 1rem;
 }
 
 #btnSubmit,
 #btnSubmitComment {
   grid-column: 2;
-  grid-row: 4;
+  grid-row: 3;
   background-color: #662624;
   color: #fff;
   font-weight: 500;
@@ -564,6 +585,13 @@ label[for="subjectContact"] {
   align-self: flex-end;
 }
 
+label[for="emailContact"],
+label[for="messageContact"],
+#subjectContact,
+label[for="email"] {
+  grid-column: 1/-1;
+}
+
 #messageContact {
   padding-bottom: 6rem;
 }
@@ -638,13 +666,26 @@ label[for="subjectContact"] {
 }
 
 .form-container .form-text {
-  display: flex;
-  margin: 1rem auto;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  margin-top: 2rem;
+  gap: 2rem;
 }
 
-.form-text label {
-  width: 50%;
+.form-container #messageError {
+  margin-top: 1rem;
+}
+
+label[for="emailComment"] {
+  grid-column: 2/3;
+  grid-row: 1;
+}
+#fullNameErrorComment,
+#emailErrorComment {
+  grid-row: 2;
+}
+#emailErrorComment {
+  grid-column: 2/3;
 }
 
 .modal-outer {
