@@ -438,8 +438,6 @@ a {
   padding: 4rem;
 
   background-color: #f3eed9;
-
-  position: relative;
 }
 
 .form p {
@@ -458,27 +456,9 @@ a {
 .form-success,
 .form-success-comment,
 .form-success-contact {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(51, 51, 51, 0.734);
   color: green;
 
-  padding: 2rem;
-  border-radius: 1rem;
-
-  display: grid;
-  place-items: center;
   display: none;
-}
-.card {
-  background-color: #fbfbfb;
-  height: 300px;
-  width: fit-content;
-  padding: 2rem;
-  border-radius: 1rem;
 }
 
 .form input {
@@ -541,6 +521,9 @@ a {
 
 /***************/
 /* ABOUT PAGE */
+.section-about .grid {
+  place-items: center;
+}
 .section-about p {
   font-size: 2rem;
 }
@@ -581,13 +564,13 @@ a {
 }
 
 .section-contact #btnSubmit {
-  grid-row: 8;
+  grid-row: 7;
   align-self: flex-end;
 }
 
 label[for="emailContact"],
 label[for="messageContact"],
-#subjectContact,
+label[for="subjectContact"],
 label[for="email"] {
   grid-column: 1/-1;
 }
