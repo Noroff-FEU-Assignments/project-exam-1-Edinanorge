@@ -6,6 +6,7 @@ const fullNameError = document.querySelector("#fullNameError");
 const email = document.querySelector("#email");
 const emailError = document.querySelector("#emailError");
 const formSuccess = document.querySelector(".form-success");
+
 const fullNameComment = document.querySelector("#nameComment");
 const fullNameErrorComment = document.querySelector("#fullNameErrorComment");
 const emailComment = document.querySelector("#emailComment");
@@ -23,7 +24,7 @@ const subjectContact = document.querySelector("#subjectContact");
 const subjectErrorContact = document.querySelector("#subjectErrorContact");
 const messageContact = document.querySelector("#messageContact");
 const messageErrorContact = document.querySelector("#messageErrorContact");
-const commnetContainer = document.querySelector(".comment-container");
+
 export function validateContactForm(event) {
   event.preventDefault();
   if (checkLength(messageContact.value, 25)) {
