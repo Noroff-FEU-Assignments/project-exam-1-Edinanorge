@@ -1,7 +1,10 @@
 import { validateCtaForm, ctaForm } from "./components/formValidation.js";
 import { stickyUrl, latestUrl } from "./config/apiUrl.js";
+import { renderSpinner } from "./components/spinner.js";
+import { displayError } from "./components/error.js";
 
-ctaForm.addEventListener("submit", validateCtaForm);
+const postContainer = document.querySelector(".section-posts");
+const latestPostsConatiner = document.querySelector(".carousel");
 
 async function getPosts(url) {
   try {
@@ -10,12 +13,11 @@ async function getPosts(url) {
     if (!response.ok) throw new Error(`${posts.status} `);
 
     // display sticky posts
-    const postContainer = document.querySelector(".section-posts");
+
     postContainer.insertAdjacentHTML("afterbegin", displayStickyPosts(posts));
   } catch (error) {
     console.log(error);
-    postContainer.innerHtml = `<div class="search-input-error">Something went wrong!</div>
-                              <p>${error}</p>`;
+    displayError(postContainer, error);
   }
 }
 getPosts(stickyUrl);
@@ -26,17 +28,18 @@ async function getLatestPosts(url) {
     const posts = await response.json();
     if (!response.ok) throw new Error(`${posts.status} `);
 
-    // dispale latest posts
-    const latestPostsConatiner = document.querySelector(".carousel");
+    // dispalay latest posts
     latestPostsConatiner.insertAdjacentHTML("afterbegin", displayLatestPosts(posts));
+    // making the carousel functional
     carousel();
   } catch (error) {
-    latestPostsConatiner.innerHtml = `<div class="search-input-error">Something went wrong!</div>
-                                      <p>${error}</p>`;
+    displayError(latestPostsConatiner, error);
     console.log(error);
   }
 }
 getLatestPosts(latestUrl);
+
+ctaForm.addEventListener("submit", validateCtaForm);
 
 function displayStickyPosts(posts) {
   let html = "";

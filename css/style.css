@@ -35,6 +35,13 @@ a {
   color: #333;
 }
 
+.error {
+  color: #940401;
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 2rem;
+}
+
 .heading-primary,
 .heading-secondary,
 .heading-tertiary,
@@ -130,6 +137,7 @@ a {
     transform: rotate(360deg);
   }
 }
+
 /*************/
 /* HOME PAGE */
 
@@ -447,7 +455,7 @@ a {
 .form-error {
   line-height: 1.2rem;
   color: #940401;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   grid-column: 1/-1;
   text-align: start;
   opacity: 0;
@@ -574,7 +582,8 @@ label[for="email"] {
   grid-column: 1/-1;
 }
 
-#messageContact {
+#messageContact,
+#message {
   padding-bottom: 6rem;
 }
 
@@ -650,8 +659,7 @@ label[for="email"] {
 .form-container .form-text {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  margin-top: 2rem;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .form-container #messageError {

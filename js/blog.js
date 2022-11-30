@@ -1,3 +1,4 @@
+import { displayError } from "./components/error.js";
 import { renderSpinner } from "./components/spinner.js";
 import { url, urlBasic, restPostsUrl } from "./config/apiUrl.js";
 
@@ -11,11 +12,11 @@ async function getPosts(url, container) {
     const response = await fetch(url);
     const posts = await response.json();
     if (!response.ok) throw new Error(`${posts.status} `);
+
     container.innerHTML = renderSpinner();
     container.innerHTML = displayPosts(posts);
   } catch (error) {
-    container.innerHTML = `<div class="search-input-error">Something went wrong!</div>
-                            <p>${error}</p>`;
+    displayError(container, error);
     console.log(error);
   }
 }
