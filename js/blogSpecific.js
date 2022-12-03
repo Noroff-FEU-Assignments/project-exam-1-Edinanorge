@@ -51,8 +51,8 @@ function displayPost(post) {
                   <h1 class="heading-secondary">${post.title.rendered}</h1>
                   <p>${post.content.rendered}</p>
                   <div>
-                    <span class="date"><i class="fa-regular fa-calendar-days"></i> ${post.date.slice(0, -9)}</span>
-                    <span><i class="fa-regular fa-comment"></i>${post.id} commment</span>
+                    <span class="date"><i class="fa-solid fa-calendar-days"></i> ${post.date.slice(0, -9)}</span>
+                    <span><i class="fa-solid fa-comment"></i>${post.id} commment</span>
                     <span><i class="fa-solid fa-share"></i>Share</span>
                   </div>  
                 </div>
